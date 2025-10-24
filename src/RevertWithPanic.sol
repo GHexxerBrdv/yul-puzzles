@@ -8,6 +8,15 @@ contract RevertWithPanic {
             // revert the function with an error of type `Panic(uint256)`
             // use "0x01" as error code
             // Hint: The error type is built-in and cannot be re-defined. See https://www.rareskills.io/post/try-catch-solidity
+            // 
+            // store the signature in the memory -> 0x4e487b71
+            // store the error code in memory -> 0x01
+            
+            let ptr := mload(0x40)
+            mstore(ptr, shl(224, 0x4e487b71))
+            mstore(add(ptr, 0x04), 0x01)
+            
+            revert(ptr, 0x24)
         }
     }
 }
