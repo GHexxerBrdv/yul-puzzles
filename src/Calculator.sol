@@ -10,6 +10,9 @@ contract Calculator {
         assembly {
             // your code here
             // add x and y
+            let ptr := mload(0x40)
+            mstore(ptr, add(x, y))
+            return(ptr, 0x20)
         }
     }
 
@@ -17,6 +20,10 @@ contract Calculator {
         assembly {
             // your code here
             // subtract y from x
+            
+            let ptr := mload(0x40)
+            mstore(ptr, sub(x, y))
+            return(ptr, 0x20)
         }
     }
 
@@ -24,6 +31,10 @@ contract Calculator {
         assembly {
             // your code here
             // multiply x by y
+            
+            let ptr := mload(0x40)
+            mstore(ptr, mul(x, y))
+            return(ptr, 0x20)
         }
     }
 
@@ -31,6 +42,10 @@ contract Calculator {
         assembly {
             // your code here
             // div x by y
+            
+            let ptr := mload(0x40)
+            mstore(ptr, div(x, y))
+            return(ptr, 0x20)
         }
     }
 }
