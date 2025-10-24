@@ -13,6 +13,11 @@ contract Double {
           // hint: x can be directly accessed in assembly
 
           // see here for how to multiply in YUL: https://docs.soliditylang.org/en/latest/yul.html#evm-dialect
+          
+          let x_val := calldataload(0x04) // get parameter from the calldata
+          let ptr := mload(0x40) // get free memory pointer
+          mstore(ptr, mul(x_val, 2)) // store the result in memory
+          return(ptr, 0x20) // return the result
       }
   }
 }
