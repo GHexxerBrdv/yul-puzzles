@@ -8,6 +8,12 @@ contract KeccakX {
             // return the keccak hash of x
             // Hint: use keccak256(offset, size)
             // Hint: you need to put x in memory first
+            
+            let ptr := mload(0x40)
+            mstore(ptr, x)
+            let hash := keccak256(ptr, 0x20)
+            mstore(ptr, hash)
+            return(ptr, 0x20)
         }
     }
 }
