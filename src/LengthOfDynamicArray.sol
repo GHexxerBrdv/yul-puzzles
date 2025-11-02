@@ -7,6 +7,11 @@ contract LengthOfDynamicArray {
             // your code here
             // return the length of array `x`
             // Hint: https://www.rareskills.io/post/solidity-dynamic
+            
+            let ptr := mload(0x40)
+            let len := mload(x)
+            mstore(ptr, len)
+            return(ptr, 0x20)
         }
     }
 }
