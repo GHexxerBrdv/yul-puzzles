@@ -14,6 +14,17 @@ contract ReadFromMapping {
             // read the value at the `index` in the mapping `readMe`
             // and return it
             // Hint: https://www.rareskills.io/post/solidity-dynamic
+            
+            let ptr := mload(0x40)
+            let slot := readMe.slot
+            
+            mstore(ptr, index)
+            mstore(add(ptr, 0x20), slot)
+            
+            let dataSlot := keccak256(ptr, 0x40)
+            let value := sload(dataSlot)
+            mstore(ptr, value)
+            return(ptr, 0x20)
         }
     }
 }
