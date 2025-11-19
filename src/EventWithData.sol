@@ -13,6 +13,10 @@ contract EventWithData {
             //   topic 0: The event signature hash (keccak256("MyEvent(uint256)"))
             //   data: The `number` value as the payload
             // Hint: Use `log1` to emit the event with the hash as the topic and `number` as data
+            
+            let ptr := mload(0x40)
+            mstore(ptr, _number)
+            log1(ptr, 0x20, 0x6c2b4666ba8da5a95717621d879a77de725f3d816709b9cbe9f059b8f875e284)
         }
     }
 }
