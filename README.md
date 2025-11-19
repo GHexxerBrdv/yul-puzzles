@@ -52,7 +52,7 @@ Go through the puzzles sequentially
 35. [WriteToPacked128](./src/WriteToPacked128.sol) 
 36. [ReadFromPacked64](./src/ReadFromPacked64.sol) 
 37. [WriteToPacked64](./src/WriteToPacked64.sol) 
-38. [WriteToPackedDynamicArray64](./src/WriteToPackedDynamicArray64.sol) 
+38. [WriteToPackedDynamicArray64](./src/WriteToPackedDynamicArray64.sol) (remaining)
 39. [ReadFromMappingInStruct](./src/ReadFromMappingInStruct.sol) 
 40. [EventWithoutData](./src/EventWithoutData.sol) 
 41. [EventWithData](./src/EventWithData.sol) 
