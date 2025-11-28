@@ -12,6 +12,8 @@ contract AnonymonusEventWithIndexedData {
             // Hint: Use `log3` to emit the event with three parameters, without including the event signature (topic0).
             // Since this is an anonymous event, it does not include the event hash (topic0).
             // include the data payload.
+            mstore(0, num)
+            log3(0, 0x20, 0x00, emitter, id)
         }
     }
 }
